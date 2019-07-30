@@ -1,0 +1,9 @@
+---
+# vars file for goreleaser
+goreleaser_platform: '{{ goreleaser_os }}_{{ goreleaser_arch }}'
+goreleaser_archive: goreleaser_{{ goreleaser_platform }}.{{ goreleaser_archivetype }}
+goreleaser_url: '{{ goreleaser_mirror }}/{{ goreleaser_version }}/{{ goreleaser_archive }}'
+goreleaser_checksum: '{{ goreleaser_checksums[goreleaser_version][goreleaser_platform] }}'
+
+goreleaser_install_dir: '{{ goreleaser_parent_install_dir }}/goreleaser-{{ goreleaser_version }}'
+

@@ -1,0 +1,55 @@
+---
+- name: resolve platform specific vars
+  include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+        - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
+        - '{{ ansible_distribution }}.yml'
+        - '{{ ansible_os_family }}.yml'
+      skip: true
+      paths:
+        - '{{ role_path }}/vars'
+- name: look for install
+  become: yes
+  stat:
+    path: '{{ goreleaser_install_dir }}'
+  changed_when: False
+  register: goreleaser_binary
+- when: not goreleaser_binary.stat.exists
+  block:
+    - name: download...
+      become: yes
+      become_user: root
+      get_url:
+        url: '{{ goreleaser_url }}'
+        dest: /tmp/{{ goreleaser_archive }}
+        checksum: '{{ goreleaser_checksum }}'
+        mode: 0644
+    - name: mkdir
+      become: yes
+      become_user: root
+      file:
+        path: '{{ goreleaser_install_dir }}'
+        state: directory
+        mode: 0755
+    - name: unarchive
+      become: yes
+      become_user: root
+      unarchive:
+        src: /tmp/{{ goreleaser_archive }}
+        dest: '{{ goreleaser_install_dir }}'
+        creates: '{{ goreleaser_install_dir }}/goreleaser'
+  always:
+    - name: delete
+      become: yes
+      become_user: root
+      file:
+        path: /tmp/{{ goreleaser_archive }}
+        state: absent
+- name: link
+  become: yes
+  become_user: root
+  file:
+    src: '{{ goreleaser_install_dir }}/goreleaser'
+    dest: '{{ goreleaser_parent_install_dir }}/bin/goreleaser'
+    state: link
