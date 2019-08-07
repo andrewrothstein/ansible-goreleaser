@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-VER=v0.113.1
+VER=v0.114.0
 DIR=~/Downloads
 MIRROR=https://github.com/goreleaser/goreleaser/releases/download/$VER
 
