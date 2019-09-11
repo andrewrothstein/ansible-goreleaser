@@ -1,5 +1,5 @@
 ---
-goreleaser_version: v0.117.1
+goreleaser_version: v0.117.2
 goreleaser_mirror: https://github.com/goreleaser/goreleaser/releases/download
 goreleaser_os: Linux
 goreleaser_arch: x86_64
@@ -126,5 +126,22 @@ goreleaser_checksums:
     Windows_i386: sha256:4fc0d9c646c0ce67fce4bcfd8cf0bf9d1259473378fb2a91d41a72ac0291fa16
     # https://github.com/goreleaser/goreleaser/releases/download/v0.117.1/goreleaser_Windows_x86_64.zip
     Windows_x86_64: sha256:5e1fde2b7f7cdaea8206d620b42dcf65735d84f0f24d4b01f0e92c097f1e9691
+  v0.117.2:
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.117.2/goreleaser_Darwin_i386.tar.gz
+    Darwin_i386: sha256:af3aef965fa05f97c394e40beabbe917753e814f779ef9f08a7ad65fd691042b
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.117.2/goreleaser_Darwin_x86_64.tar.gz
+    Darwin_x86_64: sha256:922d824b2a6e333f4c1853cc61ade990de877581ccb10872ccc1ca0a28bbb8ab
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.117.2/goreleaser_Linux_arm64.tar.gz
+    Linux_arm64: sha256:d06d7814a582ff68a6240191c63245eef3ae0178d94e4e8200ae303cdff5fda2
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.117.2/goreleaser_Linux_armv6.tar.gz
+    Linux_armv6: sha256:24666daee5f3ceac838b1a0c67ded216fd5f26b296b87de0529486f5b7b7d8dd
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.117.2/goreleaser_Linux_i386.tar.gz
+    Linux_i386: sha256:4487ee73473d261fd5985c71fe01b50e080a00698f8e809fee7f479b99344bf5
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.117.2/goreleaser_Linux_x86_64.tar.gz
+    Linux_x86_64: sha256:1d2ddd59821f69b8168a3c4386821269e57bd18eedff0f68abf9c752b592a453
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.117.2/goreleaser_Windows_i386.zip
+    Windows_i386: sha256:25f5dfa1825ef9b4b4a75935a9a688c01a48a5cd7e4ef806ddb734af6824ac3f
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.117.2/goreleaser_Windows_x86_64.zip
+    Windows_x86_64: sha256:3da750eba6db427e29354122125804ad93974d9801664172c7afe5b5a297d365
 
 goreleaser_parent_install_dir: /usr/local
