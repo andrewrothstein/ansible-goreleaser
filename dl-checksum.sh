@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-VER=v0.118.2
+VER=v0.119.0
 DIR=~/Downloads
 MIRROR=https://github.com/goreleaser/goreleaser/releases/download/$VER
 
@@ -16,11 +16,12 @@ dl()
     local os=$1
     local arch=$2
     local suffix=$3
-    local file=goreleaser_${os}_${arch}.${suffix}
+    local platform="${os}_${arch}"
+    local file=goreleaser_${platform}.${suffix}
     local url=$MIRROR/$file
 
     printf "    # %s\n" $url
-    printf "    %s_%s: sha256:%s\n" $os $arch `fgrep $file $LSHASUMS | awk '{print $1}'`
+    printf "    %s: sha256:%s\n" $platform `fgrep $file $LSHASUMS | awk '{print $1}'`
 }
 
 printf "  %s:\n" $VER

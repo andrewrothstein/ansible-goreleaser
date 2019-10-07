@@ -1,5 +1,5 @@
 ---
-goreleaser_version: v0.118.2
+goreleaser_version: v0.119.0
 goreleaser_mirror: https://github.com/goreleaser/goreleaser/releases/download
 goreleaser_os: Linux
 goreleaser_arch: x86_64
@@ -195,3 +195,20 @@ goreleaser_checksums:
     Windows_i386: sha256:342eb3cb3648210b859abc036562be7a6c5094883b6d7012ce8d7584b1b2c20b
     # https://github.com/goreleaser/goreleaser/releases/download/v0.118.2/goreleaser_Windows_x86_64.zip
     Windows_x86_64: sha256:dbb65336fdad4551487b5301dcb4bc21dd5d0101a883dbfed67e2943a6ec286e
+  v0.119.0:
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.119.0/goreleaser_Darwin_i386.tar.gz
+    Darwin_i386: sha256:585143ffff34477389a6e748b9284d0491d6e8ece7dce1e75918b76514c55ca9
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.119.0/goreleaser_Darwin_x86_64.tar.gz
+    Darwin_x86_64: sha256:c2b6957274e6a5cbbcc15f793f9e6d5bb9f45158e36f4c0099fdb1906021bd8a
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.119.0/goreleaser_Linux_arm64.tar.gz
+    Linux_arm64: sha256:188da22dd1d65e00f2e99997c890c46b9cb252be7b52203d069a326c7e9b12bb
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.119.0/goreleaser_Linux_armv6.tar.gz
+    Linux_armv6: sha256:442d80bc41c471c601d80f0b84a504702cc316670c2e7e001f497429ac3d0a6d
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.119.0/goreleaser_Linux_i386.tar.gz
+    Linux_i386: sha256:4504a7085c55b6a8aa12934bbc4a11f69d4949748f077d43c32e6fcf49c86e3e
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.119.0/goreleaser_Linux_x86_64.tar.gz
+    Linux_x86_64: sha256:33047b6a734240fb8d0d0430db5e9358f90d54b98b90c9255f4255d1933e0597
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.119.0/goreleaser_Windows_i386.zip
+    Windows_i386: sha256:fb70cb659780ce0d7540f92b23838ce0d279380072bc846f8e94df06eacc436f
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.119.0/goreleaser_Windows_x86_64.zip
+    Windows_x86_64: sha256:5394943b29a6db7489f8975d1ae78d82390b6cf821958161bf2380d4e7028e3b
