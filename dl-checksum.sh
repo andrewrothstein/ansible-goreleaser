@@ -1,36 +1,41 @@
 #!/usr/bin/env sh
-VER=${1:-v0.120.8}
 DIR=~/Downloads
-MIRROR=https://github.com/goreleaser/goreleaser/releases/download/$VER
-
-RSHASUMS=$MIRROR/goreleaser_checksums.txt
-LSHASUMS=$DIR/goreleaser_${VER}_checksums.txt
-
-if [ ! -e $LSHASUMS ]
-then
-    wget -q -O $LSHASUMS $RSHASUMS
-fi
+MIRROR=https://github.com/goreleaser/goreleaser/releases/download
 
 dl()
 {
-    local os=$1
-    local arch=$2
-    local suffix=$3
+    local ver=$1
+    local lchecksums=$2
+    local os=$3
+    local arch=$4
+    local suffix=$5
     local platform="${os}_${arch}"
     local file=goreleaser_${platform}.${suffix}
-    local url=$MIRROR/$file
+    local url=$MIRROR/$ver/$file
 
     printf "    # %s\n" $url
-    printf "    %s: sha256:%s\n" $platform `fgrep $file $LSHASUMS | awk '{print $1}'`
+    printf "    %s: sha256:%s\n" $platform `fgrep $file $lchecksums | awk '{print $1}'`
 }
 
-printf "  %s:\n" $VER
-dl Darwin i386 tar.gz
-dl Darwin x86_64 tar.gz
-dl Linux arm64 tar.gz
-dl Linux armv6 tar.gz
-dl Linux i386 tar.gz
-dl Linux x86_64 tar.gz
-dl Windows i386 zip
-dl Windows x86_64 zip
+dl_ver() {
+    local ver=$1
+    local rchecksums=$MIRROR/$ver/goreleaser_checksums.txt
+    local lchecksums=$DIR/goreleaser_${ver}_checksums.txt
 
+    if [ ! -e $lchecksums ];
+    then
+        wget -q -O $lchecksums $rchecksums
+    fi
+
+    printf "  %s:\n" $ver
+    dl $ver $lchecksums Darwin i386 tar.gz
+    dl $ver $lchecksums Darwin x86_64 tar.gz
+    dl $ver $lchecksums Linux arm64 tar.gz
+    dl $ver $lchecksums Linux armv6 tar.gz
+    dl $ver $lchecksums Linux i386 tar.gz
+    dl $ver $lchecksums Linux x86_64 tar.gz
+    dl $ver $lchecksums Windows i386 zip
+    dl $ver $lchecksums Windows x86_64 zip
+}
+
+dl_ver ${1:-v0.121.0}
