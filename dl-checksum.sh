@@ -37,4 +37,4 @@ dl_ver() {
     dl $ver $lchecksums Windows x86_64 zip
 }
 
-dl_ver ${1:-v0.125.0}
+dl_ver ${1:-v0.127.0}
