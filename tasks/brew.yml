@@ -10,7 +10,6 @@
     homebrew:
       name: goreleaser
       state: unlinked
-      
   - name: brew link package
     homebrew:
       name: goreleaser
