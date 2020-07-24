@@ -1,0 +1,18 @@
+---
+- name: install brew package
+  homebrew:
+    name: goreleaser
+    state: present
+  # relink: brew unlink helm && brew link helm
+- name: (re)link brew package
+  block: 
+  - name: brew unlink package
+    homebrew:
+      name: goreleaser
+      state: unlinked
+      
+  - name: brew link package
+    homebrew:
+      name: goreleaser
+      state: linked
+      options: overwrite
