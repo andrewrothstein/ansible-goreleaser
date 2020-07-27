@@ -14,6 +14,8 @@ Role Variables
 
 See [defaults/main.yml](defaults/main.yml)
 
+> Note: If goreleaser_installer is toggled between Homebrew (brew) and tar.gz (tgz) mode, please make sure the executable is re-linked if you want to leverage the Homebrew version: `brew unlink goreleaser && brew link goreleaser`
+
 Dependencies
 ------------
 
