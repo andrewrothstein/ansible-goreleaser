@@ -1,0 +1,5 @@
+---
+- name: install brew package
+  homebrew:
+    name: goreleaser/tap/goreleaser
+    state: present
