@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -e
 DIR=~/Downloads
 MIRROR=https://github.com/goreleaser/goreleaser/releases/download
 
@@ -37,4 +38,4 @@ dl_ver() {
     dl $ver $lchecksums Windows x86_64 zip
 }
 
-dl_ver ${1:-v0.167.0}
+dl_ver ${1:-v0.168.0}
