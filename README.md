@@ -1,6 +1,7 @@
 andrewrothstein.goreleaser
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-goreleaser.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-goreleaser)
+![Build Status](https://github.com/andrewrothstein/ansible-goreleaser/actions/workflows/build.yml/badge.svg)
+
 
 Installs [goreleaser](https://goreleaser.com/).
 
