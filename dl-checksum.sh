@@ -20,7 +20,8 @@ dl()
 
 dl_ver() {
     local ver=$1
-    local rchecksums=$MIRROR/$ver/goreleaser_checksums.txt
+    # https://github.com/goreleaser/goreleaser/releases/download/v0.178.0/checksums.txt
+    local rchecksums=$MIRROR/$ver/checksums.txt
     local lchecksums=$DIR/goreleaser_${ver}_checksums.txt
 
     if [ ! -e $lchecksums ];
@@ -28,6 +29,7 @@ dl_ver() {
         wget -q -O $lchecksums $rchecksums
     fi
 
+    printf "  # %s\n" $rchecksums
     printf "  %s:\n" $ver
     dl $ver $lchecksums Darwin x86_64 tar.gz
     dl $ver $lchecksums Linux arm64 tar.gz
@@ -38,4 +40,4 @@ dl_ver() {
     dl $ver $lchecksums Windows x86_64 zip
 }
 
-dl_ver ${1:-v0.176.0}
+dl_ver ${1:-v0.178.0}
