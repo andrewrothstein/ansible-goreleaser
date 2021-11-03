@@ -31,7 +31,7 @@ dl_ver() {
 
     printf "  # %s\n" $rchecksums
     printf "  %s:\n" $ver
-    dl $ver $lchecksums Darwin x86_64 tar.gz
+    dl $ver $lchecksums Darwin all tar.gz
     dl $ver $lchecksums Linux arm64 tar.gz
     dl $ver $lchecksums Linux armv6 tar.gz
     dl $ver $lchecksums Linux i386 tar.gz
@@ -40,4 +40,4 @@ dl_ver() {
     dl $ver $lchecksums Windows x86_64 zip
 }
 
-dl_ver ${1:-v0.180.3}
+dl_ver ${1:-v0.184.0}
