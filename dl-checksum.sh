@@ -15,7 +15,7 @@ dl()
     local url=$MIRROR/$ver/$file
 
     printf "    # %s\n" $url
-    printf "    %s: sha256:%s\n" $platform `fgrep $file $lchecksums | awk '{print $1}'`
+    printf "    %s: sha256:%s\n" $platform $(grep -e "$file\$" $lchecksums | awk '{print $1}')
 }
 
 dl_ver() {
@@ -31,13 +31,12 @@ dl_ver() {
 
     printf "  # %s\n" $rchecksums
     printf "  %s:\n" $ver
-    dl $ver $lchecksums Darwin all tar.gz
+    dl $ver $lchecksums Darwin x86_64 tar.gz
+    dl $ver $lchecksums Darwin arm64 tar.gz
     dl $ver $lchecksums Linux arm64 tar.gz
-    dl $ver $lchecksums Linux armv6 tar.gz
-    dl $ver $lchecksums Linux i386 tar.gz
     dl $ver $lchecksums Linux x86_64 tar.gz
-    dl $ver $lchecksums Windows i386 zip
     dl $ver $lchecksums Windows x86_64 zip
+    dl $ver $lchecksums Windows i386 zip
 }
 
-dl_ver ${1:-v1.1.0}
+dl_ver ${1:-v1.2.2}
