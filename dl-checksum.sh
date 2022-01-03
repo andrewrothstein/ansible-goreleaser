@@ -39,4 +39,4 @@ dl_ver() {
     dl $ver $lchecksums Windows i386 zip
 }
 
-dl_ver ${1:-v1.2.2}
+dl_ver ${1:-v1.2.5}
