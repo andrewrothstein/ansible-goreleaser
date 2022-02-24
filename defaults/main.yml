@@ -1,5 +1,5 @@
 ---
-goreleaser_version: v1.3.1
+goreleaser_version: v1.5.0
 goreleaser_mirror: https://github.com/goreleaser/goreleaser/releases/download
 goreleaser_os: Linux
 goreleaser_arch: x86_64
@@ -1281,3 +1281,17 @@ goreleaser_checksums:
     Windows_x86_64: sha256:58f45fb1091fe82f5c4e2bbf38b5435a4d95cb58c46fc1be2171cca1aaa625e1
     # https://github.com/goreleaser/goreleaser/releases/download/v1.3.1/goreleaser_Windows_i386.zip
     Windows_i386: sha256:0f52affbc7f1e8a261b61c52c13311da1652560cf5cb1c8aa7b5e519e1bc9266
+  # https://github.com/goreleaser/goreleaser/releases/download/v1.5.0/checksums.txt
+  v1.5.0:
+    # https://github.com/goreleaser/goreleaser/releases/download/v1.5.0/goreleaser_Darwin_x86_64.tar.gz
+    Darwin_x86_64: sha256:241cd55c66193dd674da273dc96bc143ab7cd6cf7a21a5e567ef1fce3cae927d
+    # https://github.com/goreleaser/goreleaser/releases/download/v1.5.0/goreleaser_Darwin_arm64.tar.gz
+    Darwin_arm64: sha256:b69ed690e249e1668b033493d16670e5a6bbb7163186307ce04b21bec5ec3643
+    # https://github.com/goreleaser/goreleaser/releases/download/v1.5.0/goreleaser_Linux_arm64.tar.gz
+    Linux_arm64: sha256:d17b3ed1a03c75960dfa15572ca8b239f27b9d7a7dd342a0069a41f34b927242
+    # https://github.com/goreleaser/goreleaser/releases/download/v1.5.0/goreleaser_Linux_x86_64.tar.gz
+    Linux_x86_64: sha256:a7bd4f76a495ed91f087dbf86fdbfa5f1bb594e86c1ec953e6b2dd46f596563b
+    # https://github.com/goreleaser/goreleaser/releases/download/v1.5.0/goreleaser_Windows_x86_64.zip
+    Windows_x86_64: sha256:9132179d7896f1ba856beae71ff3b914703e68150b3b91a378f8fb8a997080cc
+    # https://github.com/goreleaser/goreleaser/releases/download/v1.5.0/goreleaser_Windows_i386.zip
+    Windows_i386: sha256:1b2c4ffeacc6f8ec3ecf99f8a7145401b53c8cecd8def27c6246267a3e5efdc0
