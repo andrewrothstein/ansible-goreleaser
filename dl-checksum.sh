@@ -9,7 +9,7 @@ dl()
     local lchecksums=$2
     local os=$3
     local arch=$4
-    local suffix=$5
+    local suffix=${5:-tar.gz}
     local platform="${os}_${arch}"
     local file=goreleaser_${platform}.${suffix}
     local url=$MIRROR/$ver/$file
@@ -26,17 +26,21 @@ dl_ver() {
 
     if [ ! -e $lchecksums ];
     then
-        wget -q -O $lchecksums $rchecksums
+        curl -sSLf -o $lchecksums $rchecksums
     fi
 
     printf "  # %s\n" $rchecksums
     printf "  %s:\n" $ver
-    dl $ver $lchecksums Darwin x86_64 tar.gz
-    dl $ver $lchecksums Darwin arm64 tar.gz
-    dl $ver $lchecksums Linux arm64 tar.gz
-    dl $ver $lchecksums Linux x86_64 tar.gz
-    dl $ver $lchecksums Windows x86_64 zip
+    dl $ver $lchecksums Darwin arm64
+    dl $ver $lchecksums Darwin x86_64
+    dl $ver $lchecksums Linux arm64
+    dl $ver $lchecksums Linux armv7
+    dl $ver $lchecksums Linux i386
+    dl $ver $lchecksums Linux x86_64
+    dl $ver $lchecksums Windows arm64 zip
+    dl $ver $lchecksums Windows armv7 zip
     dl $ver $lchecksums Windows i386 zip
+    dl $ver $lchecksums Windows x86_64 zip
 }
 
-dl_ver ${1:-v1.5.0}
+dl_ver ${1:-v1.6.1}
