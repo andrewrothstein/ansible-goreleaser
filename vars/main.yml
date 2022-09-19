@@ -1,5 +1,7 @@
 ---
 # vars file for goreleaser
+goreleaser_os: '{{ ansible_system }}'
+goreleaser_arch: '{{ goreleaser_arch_map[ansible_architecture] }}'
 goreleaser_platform: '{{ goreleaser_os }}_{{ goreleaser_arch }}'
 goreleaser_archive: goreleaser_{{ goreleaser_platform }}.{{ goreleaser_archivetype }}
 goreleaser_tmp_archive: /tmp/{{ goreleaser_archive }}
