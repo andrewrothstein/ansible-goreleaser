@@ -3,7 +3,7 @@
   become: true
   stat:
     path: '{{ goreleaser_install_dir }}'
-  changed_when: False
+  changed_when: false
   register: goreleaser_binary
 - when: not goreleaser_binary.stat.exists
   block:
