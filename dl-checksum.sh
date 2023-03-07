@@ -38,9 +38,8 @@ dl_ver() {
     dl $ver $lchecksums Linux i386
     dl $ver $lchecksums Linux x86_64
     dl $ver $lchecksums Windows arm64 zip
-    dl $ver $lchecksums Windows armv7 zip
     dl $ver $lchecksums Windows i386 zip
     dl $ver $lchecksums Windows x86_64 zip
 }
 
-dl_ver ${1:-v1.15.2}
+dl_ver ${1:-v1.16.0}
