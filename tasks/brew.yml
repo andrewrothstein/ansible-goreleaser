@@ -1,5 +1,5 @@
 ---
-- name: install brew package
-  homebrew:
+- name: Install brew package
+  ansible.builtin.homebrew:
     name: goreleaser/tap/goreleaser
     state: present
