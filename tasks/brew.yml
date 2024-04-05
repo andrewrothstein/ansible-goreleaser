@@ -1,5 +1,5 @@
 ---
 - name: Install brew package
-  ansible.builtin.homebrew:
+  community.general.homebrew:
     name: goreleaser/tap/goreleaser
     state: present
