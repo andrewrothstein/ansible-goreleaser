@@ -23,6 +23,9 @@
         path: '{{ goreleaser_install_dir }}'
         state: directory
         mode: '755'
+    - name: Install andrewrothstein.unarchivedeps
+      ansible.builtin.include_role:
+        name: andrewrothstein.unarchivedeps
     - name: Unarchive from {{ goreleaser_tmp_archive }} into {{ goreleaser_install_dir }}
       become: true
       become_user: root

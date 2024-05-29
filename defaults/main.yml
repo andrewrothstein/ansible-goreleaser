@@ -1,5 +1,5 @@
 ---
-goreleaser_version: v1.26.1
+goreleaser_version: v1.26.2
 goreleaser_mirror: https://github.com/goreleaser/goreleaser/releases/download
 goreleaser_arch_map:
   386: i386
@@ -2167,3 +2167,23 @@ goreleaser_checksums:
     Windows_i386: sha256:601d8675ea3c72dd05dbedb9a4249bf9198ebe0dbe3cdb085bfe717834d4032a
     # https://github.com/goreleaser/goreleaser/releases/download/v1.26.1/goreleaser_Windows_x86_64.zip
     Windows_x86_64: sha256:931af9ca373ee204b4dbd43b878caedaaa5b9f76da0a955e9f84c879c38087b5
+  # https://github.com/goreleaser/goreleaser/releases/download/v1.26.2/checksums.txt
+  v1.26.2:
+    # https://github.com/goreleaser/goreleaser/releases/download/v1.26.2/goreleaser_Darwin_arm64.tar.gz
+    Darwin_arm64: sha256:fc07a03bab8d71b60a9f52c9c54e89cdab8e84fac2652a358abd0a05192bae2a
+    # https://github.com/goreleaser/goreleaser/releases/download/v1.26.2/goreleaser_Darwin_x86_64.tar.gz
+    Darwin_x86_64: sha256:855a9c02d0e6a1590da302cb4e4648f1cec385fe896987e89dd1a661e1df9003
+    # https://github.com/goreleaser/goreleaser/releases/download/v1.26.2/goreleaser_Linux_arm64.tar.gz
+    Linux_arm64: sha256:2b984e2932b24be0d638c7dab7357a59d86eb79ca7fee1afd31be5ebb1847cbb
+    # https://github.com/goreleaser/goreleaser/releases/download/v1.26.2/goreleaser_Linux_armv7.tar.gz
+    Linux_armv7: sha256:6db2899885be19f123b36192a42dcfb3bb2b3e1009fec7277517969e96d8a7c6
+    # https://github.com/goreleaser/goreleaser/releases/download/v1.26.2/goreleaser_Linux_i386.tar.gz
+    Linux_i386: sha256:21c236575cccd29588182b570b4ffe83ad8fb96cd3b13b2af79feafd8ae37b1b
+    # https://github.com/goreleaser/goreleaser/releases/download/v1.26.2/goreleaser_Linux_x86_64.tar.gz
+    Linux_x86_64: sha256:cfbdf12e3ea20e4c3a209d07311f43c2e0baf20d5cce09bcdc232567e0f34307
+    # https://github.com/goreleaser/goreleaser/releases/download/v1.26.2/goreleaser_Windows_arm64.zip
+    Windows_arm64: sha256:79ab333fcba12f175a090d6790d3c2ac39e5ed3bd3b06bc484a69769e12f948c
+    # https://github.com/goreleaser/goreleaser/releases/download/v1.26.2/goreleaser_Windows_i386.zip
+    Windows_i386: sha256:c257a38a42da9db7815b3bdfc0214b7d1fcabc1a5abe81d02789c39549ce79db
+    # https://github.com/goreleaser/goreleaser/releases/download/v1.26.2/goreleaser_Windows_x86_64.zip
+    Windows_x86_64: sha256:ed95a757e83ee7d10e77dc56b9a9a221a2cbce3ccdd38e701ec4b1befc7606f6
