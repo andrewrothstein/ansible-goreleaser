@@ -1,9 +1,13 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.goreleaser
+  hosts: all
   roles:
-  - role: '{{ playbook_dir }}'
+    - role: '{{ playbook_dir }}'
   tasks:
-  - command: /usr/local/bin/goreleaser --version
-    register: goreleaser_output
-  - debug:
-      msg: '{{ goreleaser_output.stdout }}'
+    - name: Executing 'goreleaser --version'
+      ansible.builtin.command: goreleaser --version
+      changed_when: false
+      register: goreleaser_output
+    - name: Output from 'goreleaser --version'
+      ansible.builtin.debug:
+        msg: '{{ goreleaser_output.stdout }}'
